@@ -7,10 +7,10 @@ WORKDIR /app
 # Copy necessary files and directories
 COPY requirements.txt .
 COPY app.py .
-COPY config.py .  
 
 # Execute build commands
-RUN pip install --no-cache-dir -r requirements.txt
+RUN apt-get update && apt-get install -y build-essential python3-dev
+RUN pip install -r requirements.txt
 
 # Describe which ports your application is listening on
 EXPOSE 5000
