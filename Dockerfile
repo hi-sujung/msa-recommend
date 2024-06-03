@@ -9,7 +9,7 @@ COPY requirements.txt .
 COPY app.py .
 
 # Execute build commands
-RUN apt-get update && apt-get install -y build-essential python3-dev
+RUN apt-get update && apt-get install -y build-essential python3-dev default-jdk
 RUN pip install -r requirements.txt
 
 # Describe which ports your application is listening on
